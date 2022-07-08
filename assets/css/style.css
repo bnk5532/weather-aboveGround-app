@@ -1,7 +1,8 @@
 * {
     box-sizing: border-box;
 }
-  
+
+
 body {
     background-color: white;
     margin: 0;
@@ -12,12 +13,14 @@ body {
 }
   
 .jumbotron {
-      background-color: rgb(17, 17, 177);
+      /* background-color: rgb(17, 17, 177); */
+      background: linear-gradient(.25turn, rgb(73, 73, 234), 50%, rgb(6, 6, 154));
       color: white;
       display: flex;
       justify-content: center;
       margin: 0;
-      padding: 10px;
+      padding: 15px;
+      border-radius: 0;
 }
 
 h1 {
@@ -25,8 +28,8 @@ h1 {
 }
 
 h2 {
-    font-size: 25px;
-    margin: 10px 0 10px 15px;
+    font-size: 22px;
+    /* margin: 10px 0 10px 0px; */
     font-weight: bold;
 }
 
@@ -34,15 +37,27 @@ h2 {
     display: block;
     border: solid black 1px;
     border-radius: .3rem;
-    margin-left: 15px;
-    width: 200px;
+    margin-left: 0px;
+    width: 172px;
 }
 
 .btn {
     display: block;
     background-color: rgb(0, 162, 255);
     color: white;
-    width: 200px;
-    margin: 10px 0 10px 15px;
+    width: 172px;
+    margin: 10px 0 15px 0px;
+    
 
 }
+
+.city-header {
+margin: 0 0 20px 0px;
+padding: 20px;
+  border: 1px solid black;
+  border-radius: 0.3rem;
+}
+
+/* .city-card {
+    border-bottom: black 1px solid;
+} */

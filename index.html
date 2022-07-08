@@ -14,34 +14,23 @@
     <header class="jumbotron">
         <h1 class="header">Weather AboveGround App</h1>
     </header>
-    <main class="flex-row">
-        <div class="col-12 col-md-4"></div>
-        <div class="city-card">
+    <main class="m-3 row justify-content-around"> 
+        <div class="city-card col-4 col-md-3">
           <h2 class="search-header">Search for a City</h2>
           <form id="search-form">
             <input 
-            class="search-box"/>
+            class="search-box" placeholder = "  Wilmington">
             
             <button type="submit" class="btn">Search</button>
           </form>
         </div>
 
-        <div class="col-12 col-md-8">
-            <h3 class="city-header">
-              Weather for: <span id="weather-search-term"></span>
-                <!-- City (mm/dd/yyyy) weather icon
-                Temp:
-                Wind:
-                Humidity:
-                UV Index:
-
-                pulls dynamically from API. -->
-
-            </h3>
+        <div class="city-header col-9">
+            <h3>Weather for: <span id="weather-search-term"></span></h3>
             <div id="weather-container" class="list-group"></div>
           </div>
 
-          <div class="forcast-container">
+          <div class="container col-6">
             <h4 class="forcast-header">5-Day Forecast:</h4>
             <ul id="forecastBlocks"></ul>
           </div>
