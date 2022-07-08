@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: helvetica, arial, sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+}
+  
+.jumbotron {
+      background-color: rgb(17, 17, 177);
+      color: white;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 10px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 25px;
+    margin: 10px 0 10px 15px;
+    font-weight: bold;
+}
+
+.search-box {
+    display: block;
+    border: solid black 1px;
+    border-radius: .3rem;
+    margin-left: 15px;
+    width: 200px;
+}
+
+.btn {
+    display: block;
+    background-color: rgb(0, 162, 255);
+    color: white;
+    width: 200px;
+    margin: 10px 0 10px 15px;
+
+}

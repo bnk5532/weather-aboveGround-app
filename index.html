@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather AboveGround</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+    <header class="jumbotron">
+        <h1 class="header">Weather AboveGround App</h1>
+    </header>
+    <main class="flex-row">
+        <div class="col-12 col-md-4"></div>
+        <div class="city-card">
+          <h2 class="search-header">Search for a City</h2>
+          <form id="search-form">
+            <input 
+            class="search-box"/>
+            
+            <button type="submit" class="btn">Search</button>
+          </form>
+        </div>
+
+        <div class="col-12 col-md-8">
+            <h3 class="city-header">
+              Weather for: <span id="weather-search-term"></span>
+                <!-- City (mm/dd/yyyy) weather icon
+                Temp:
+                Wind:
+                Humidity:
+                UV Index:
+
+                pulls dynamically from API. -->
+
+            </h3>
+            <div id="weather-container" class="list-group"></div>
+          </div>
+
+          <div class="forcast-container">
+            <h4 class="forcast-header">5-Day Forecast:</h4>
+            <ul id="forecastBlocks"></ul>
+          </div>
+            
+    </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
