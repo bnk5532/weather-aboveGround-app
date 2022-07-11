@@ -19,20 +19,25 @@
           <h2 class="search-header">Search for a City</h2>
           <form id="search-form">
             <input 
-            class="search-box" placeholder = "  Wilmington">
-            
-            <button type="submit" class="btn">Search</button>
+            type="text"
+            id="city"
+            class="search-box" 
+            placeholder = "  Wilmington">
+            <div class="input-append-city">
+                <button type="submit" class="btn">Search</button>
+            </div>
           </form>
         </div>
 
         <div class="city-header col-9">
             <h3>Weather for: <span id="weather-search-term"></span></h3>
+            <div class="current-weather"></div>
             <div id="weather-container" class="list-group"></div>
           </div>
 
-          <div class="container col-6">
+          <div class="container col-6 row">
             <h4 class="forcast-header">5-Day Forecast:</h4>
-            <ul id="forecastBlocks"></ul>
+            <div id="forecastBlocks" class="row"></div>
           </div>
             
     </div>
