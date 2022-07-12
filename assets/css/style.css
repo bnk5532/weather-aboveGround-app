@@ -19,16 +19,16 @@ body {
       display: flex;
       justify-content: center;
       margin: 0;
-      padding: 15px;
+      padding: 10px;
       border-radius: 0;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 32px;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 21px;
     /* margin: 10px 0 10px 0px; */
     font-weight: bold;
 }
