@@ -14,35 +14,34 @@
     <header class="jumbotron mb-2">
         <h1 class="header">Weather AboveGround App</h1>
     </header>
-    <main class="row"> 
+    <main>
+        <div class="container-fluid">
+        <div class ="row">
         <div class="city-card col-3 ml-2">
           <h2 class="search-header">Search for a City</h2>
-          <form id="search-form">
-            <input 
-            type="text"
-            id="city"
-            class="search-box" 
-            placeholder = "  Wilmington">
+          <!-- <form id="search-form"> -->
+            <input type="text" id="city" class="search-box" placeholder = "  Wilmington">
             <div class="input-append-city">
-                <button type="submit" class="btn" id="runSearch">Search</button>
+                <button type="submit" class="btn btn-search" id="runSearch">Search</button>
             </div>
-          </form>
+            <div class="seach-list"></div>
+          <!-- </form> -->
         </div>
 
-        <div class="container-fluid col-md-8 city-header">
+        <div class="container-fluid col-md-8 city-header current-weather">
             <div class="row p-2">
                 <div class = "card">
                     <!-- <h3><span id="weather-search-term"></span></h3> -->
-                    <div class="current-weather-card"></div>
+                    <div class="card-body current-weather-card"></div>
                     <!-- <div id="weather-container" class="list-group"></div> -->
                 </div>
             </div>
-            <div class="row">
-              <h4 class="forcast-header">5-Day Forecast:</h4>
-              </div>
-              <div id="forecastBlocks" class="row"></div>
-              </div>  
-        </div>
+        </div>  
+    </div>
+    <div class="row">
+      <h4 class="forcast-header m-2 col 8 hide">5-Day Forecast:</h4>
+      </div>
+      <div id="forecastBlocks" class="row"></div>
     </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
