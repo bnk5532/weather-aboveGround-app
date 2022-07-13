@@ -23,6 +23,7 @@ body {
       border-radius: 0;
 }
 
+
 h1 {
     font-size: 32px;
 }
@@ -49,6 +50,11 @@ h2 {
     margin: 10px 0 15px 0px;
    
 }
+.search-list{
+    display: flex;
+    flex-direction:column;
+    width:100%
+}
 
 .card {
     border: none
@@ -70,6 +76,9 @@ padding: 20px;
   border-radius: 0.3rem;
 } */
 
-/* .city-card {
-    border-bottom: black 1px solid;
-} */
+.city-card {
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center
+}

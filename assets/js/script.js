@@ -2,30 +2,12 @@ var currentWeather = $(".current-weather");
 var forecastHeader = $(".forecast-header");
 var previousSearches = [];
 
-var getLocalStorage = function () {
-  var storageData = JSON.parse(localStorage.getItem("previousSearches"));
-  if (storageData !== null) {
-    previousSearches = storageData;
-    for (var i = 0; i < previousSearches.length; i++) {
-      //only returns 5 previous results from localStorage upon browser refresh.
-      if (i == 5) {
-        break;
-      }
-      previouslySearchBtns = $("<a>").attr({
-        class: "previous-city-searched",
-        href: "#",
-        "btn-id": i
-      });
-      previouslySearchBtns.text(previousSearches[i]);
-      $(".search-list").append(previouslySearchBtns);
-    }
-  }
-};
+
 
 function getWeather(city) {
   var isError = false;
   currentWeather.empty();
-  $("#forcastBlocks").empty();
+    $("#forecastBlocks").empty()
   if (!city) {
     return;
   }
@@ -67,7 +49,7 @@ function getWeather(city) {
       currentWeather.append($("<p>").html("Temperature: " + temperature + " &#8457"));
       var humidity = response.main.humidity + "&#37;";
       var feelsLike = Math.ceil(response.main.feels_like);
-      currentWeather.append($("<p>").html("Feels Like: " + feelsLike));
+      currentWeather.append($("<p>").html("Feels Like: " + feelsLike + " &#8457"    ));
       currentWeather.append($("<p>").html("Humidity: " + humidity));
       //wind in different cat w/i api response.
       var wind = response.wind.speed;
@@ -99,7 +81,8 @@ function getWeather(city) {
           } else {
             $("span").attr("class", "btn btn-danger");
           }
-
+          fheader = document.getElementById("forecast-header")
+          fheader.classList.remove('hide')
           //5-day forcecast loop -- today+1 in loop w/i = 1
           for (var i = 1; i < 6; i++) {
             var lowCard = $("<div>").attr(
@@ -131,26 +114,53 @@ $("#runSearch").on("click", function () {
     var city = $("#city").val();
     getWeather(city);
     $("#city").val("");
-    console.log("clicky works");
+    
+    console.log(classList);
 });
 
 function removeHide() {
     forecastHeader.classList.remove("hide");
 };
 
+var getLocalStorage = function () {
+    $(".search-list").empty();
+    var storageData = JSON.parse(localStorage.getItem("previousSearches"));
+    if (storageData !== null) {
+      previousSearches = storageData.reverse();
+
+      console.log(previousSearches)
+      historyList = ""
+      for (const history of previousSearches) {
+        $(".search-list").append(`<button type="submit" class="btn previous-city-searched">${history}</button>`)
+      }
+  
+    //   for (var i = 0; i < previousSearches.length; i++) {
+    //     //only returns 5 previous results from localStorage upon browser refresh.
+    //     if (i == 5) {
+    //       break;
+    //     }
+    //     previouslySearchBtns = $(".search-list").attr({
+    //       class: "previous-city-searched",
+    //       href: "#",
+    //       "btn-id": i
+    //     });
+    //     previouslySearchBtns.text(previousSearches[i]);
+    //     $(".search-list").append(previouslySearchBtns);
+      }
+    };
 
 var saveLocalStorage = function (city) {
+    console.log(previousSearches)
   var inArray = previousSearches.includes(city);
   if (!inArray && city !== "") {
     previousSearches.push(city);
+    if (previousSearches.length >=5){
+        console.log("Length greater than 5")
+        previousSearches.shift()
+        console.log(previousSearches)
+    }
     localStorage.setItem("previousSearches", JSON.stringify(previousSearches));
-    var previouslySearchBtns = $("<a>").attr({
-      class: "search-list-button",
-      href: "#",
-      "btn-id": previousSearches.length,
-    });
-    previouslySearchBtns.text(city);
-    $(".search-list").append(previouslySearchBtns);
+    getLocalStorage()
   }
 };
 
@@ -161,19 +171,3 @@ $(".search-list").on("click", function (event) {
 });
 
 getLocalStorage();
-
-// function showLocal() {
-//   fetch(
-//     "http://api.openweathermap.org/geo/1.0/direct?q=" +
-//       city +
-//       "&appid=8037846fe62bc5e81d01cc8e74316bc3"
-//   )
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (response) {
-//       getWeather(response.name);
-//       $("#city").val(response.name);
-//       saveLocalStorage(response.name);
-//     });
-// }
