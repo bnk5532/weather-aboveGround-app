@@ -131,21 +131,8 @@ var getLocalStorage = function () {
       console.log(previousSearches)
       historyList = ""
       for (const history of previousSearches) {
-        $(".search-list").append(`<button type="submit" class="btn previous-city-searched">${history}</button>`)
+        $(".search-list").append(`<button type="submit" class="btn bg-light m-1 previous-city-searched">${history}</button>`)
       }
-  
-    //   for (var i = 0; i < previousSearches.length; i++) {
-    //     //only returns 5 previous results from localStorage upon browser refresh.
-    //     if (i == 5) {
-    //       break;
-    //     }
-    //     previouslySearchBtns = $(".search-list").attr({
-    //       class: "previous-city-searched",
-    //       href: "#",
-    //       "btn-id": i
-    //     });
-    //     previouslySearchBtns.text(previousSearches[i]);
-    //     $(".search-list").append(previouslySearchBtns);
       }
     };
 
